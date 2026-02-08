@@ -84,3 +84,96 @@ footer {
   padding: 1.5rem;
   margin-top: auto;
 }
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.project-card button {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.project-card button:hover {
+  background-color: #5568d3;
+}
+
+.project-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #ddd;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-details h4 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.project-details ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-details li {
+  background-color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid #667eea;
+  color: #667eea;
+}
+
+.project-details a {
+  display: inline-block;
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.project-details a:hover {
+  color: #5568d3;
+}

@@ -2,6 +2,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/About'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 
 function App() {
   const mySkills = [
@@ -9,6 +10,29 @@ function App() {
     { name: 'JavaScript', level: 'Intermedio' },
     { name: 'React', level: 'Aprendiendo' },
     { name: 'TypeScript', level: 'Aprendiendo' },
+  ]
+  
+  const myProjects = [
+    {
+      id: 1,
+      title: 'Portfolio Personal',
+      description: 'Mi primer proyecto en React con TypeScript',
+      technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
+      link: 'https://github.com/tuusuario/portfolio'
+    },
+    {
+      id: 2,
+      title: 'Aplicación de Tareas',
+      description: 'Una app para gestionar tareas diarias',
+      technologies: ['React', 'TypeScript', 'LocalStorage'],
+    },
+    {
+      id: 3,
+      title: 'Blog Personal',
+      description: 'Un blog construido desde cero',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      link: 'https://miblog.com'
+    }
   ]
 
   return (
@@ -22,6 +46,8 @@ function App() {
         />
         
         <Skills skills={mySkills} />
+        
+        <Projects projects={myProjects} />  {/* ← Añadir */}
       </main>
       
       <Footer year={2026} name="Juan Pérez" />
