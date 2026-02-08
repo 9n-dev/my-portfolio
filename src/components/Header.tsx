@@ -1,8 +1,13 @@
-function Header() {
+interface HeaderProps {
+  name: string;
+  title: string;
+}
+
+function Header({ name, title }: HeaderProps) {
   return (
     <header>
-      <h1>Juan Pérez</h1>
-      <p>Desarrollador Web Full Stack</p>
+      <h1>{name}</h1>
+      <p>{title}</p>
     </header>
   )
 }

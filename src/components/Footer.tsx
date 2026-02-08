@@ -1,7 +1,12 @@
-function Footer() {
+interface FooterProps {
+  year: number;
+  name: string;
+}
+
+function Footer({ year, name }: FooterProps) {
   return (
     <footer>
-      <p>&copy; 2026 Juan Pérez</p>
+      <p>&copy; {year} {name}</p>
     </footer>
   )
 }
