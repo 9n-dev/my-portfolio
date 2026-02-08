@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import ContactForm from './components/ContactForm'  // ← Añadir
 
 function App() {
   const mySkills = [
@@ -47,7 +48,9 @@ function App() {
         
         <Skills skills={mySkills} />
         
-        <Projects projects={myProjects} />  {/* ← Añadir */}
+        <Projects projects={myProjects} />
+        
+        <ContactForm />  {/* ← Añadir */}
       </main>
       
       <Footer year={2026} name="Juan Pérez" />
