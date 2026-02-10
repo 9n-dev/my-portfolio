@@ -1,13 +1,6 @@
 import { useState } from 'react'
 import Section from './Section'
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  link?: string;
-}
+import { type Project } from '../types'
 
 interface ProjectsProps {
   projects: Project[];

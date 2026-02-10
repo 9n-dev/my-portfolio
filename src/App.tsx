@@ -3,57 +3,34 @@ import Footer from './components/Footer'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
-import ContactForm from './components/ContactForm'  // ← Añadir
+import ContactForm from './components/ContactForm'
+import { personalInfo, skills, projects, currentYear } from './data/portfolio'
 
 function App() {
-  const mySkills = [
-    { name: 'HTML/CSS', level: 'Avanzado' },
-    { name: 'JavaScript', level: 'Intermedio' },
-    { name: 'React', level: 'Aprendiendo' },
-    { name: 'TypeScript', level: 'Aprendiendo' },
-  ]
-  
-  const myProjects = [
-    {
-      id: 1,
-      title: 'Portfolio Personal',
-      description: 'Mi primer proyecto en React con TypeScript',
-      technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
-      link: 'https://github.com/tuusuario/portfolio'
-    },
-    {
-      id: 2,
-      title: 'Aplicación de Tareas',
-      description: 'Una app para gestionar tareas diarias',
-      technologies: ['React', 'TypeScript', 'LocalStorage'],
-    },
-    {
-      id: 3,
-      title: 'Blog Personal',
-      description: 'Un blog construido desde cero',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://miblog.com'
-    }
-  ]
-
   return (
     <div className="container">
-      <Header name="Juan Pérez" title="Desarrollador Web Full Stack" />
+      <Header 
+        name={personalInfo.name} 
+        title={personalInfo.title} 
+      />
       
       <main>
         <About 
-          name="Juan Pérez"
-          description="Soy un desarrollador apasionado por crear aplicaciones web modernas y eficientes. Me especializo en React, TypeScript y Node.js."
+          name={personalInfo.name}
+          description={personalInfo.description}
         />
         
-        <Skills skills={mySkills} />
+        <Skills skills={skills} />
         
-        <Projects projects={myProjects} />
+        <Projects projects={projects} />
         
-        <ContactForm />  {/* ← Añadir */}
+        <ContactForm />
       </main>
       
-      <Footer year={2026} name="Juan Pérez" />
+      <Footer 
+        year={currentYear} 
+        name={personalInfo.name} 
+      />
     </div>
   )
 }

@@ -1,9 +1,5 @@
 import Section from './Section'
-
-interface Skill {
-  name: string;
-  level: string;
-}
+import { type Skill } from '../types'
 
 interface SkillsProps {
   skills: Skill[];

@@ -1,14 +1,9 @@
 import { useState, type FormEvent, type ChangeEvent } from 'react'
 import Section from './Section'
-
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import { type ContactFormData } from '../types'
 
 function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     message: ''
@@ -31,7 +26,6 @@ function ContactForm() {
     console.log('Datos del formulario:', formData)
     setSubmitted(true)
     
-    // Resetear el formulario después de 3 segundos
     setTimeout(() => {
       setFormData({ name: '', email: '', message: '' })
       setSubmitted(false)
