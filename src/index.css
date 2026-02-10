@@ -63,6 +63,58 @@
 }
 
 /* ===================================
+   ANIMACIONES AL SCROLL
+   =================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes de animación */
+.animate-fade {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.animate-fade.animate-in {
+  opacity: 1;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-slide-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-slide-right.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delays para animaciones escalonadas */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+
+/* ===================================
    ESTILOS BASE
    =================================== */
 body {
@@ -1138,5 +1190,115 @@ html {
   .btn-icon {
     flex: 1;
     justify-content: center;
+  }
+}
+
+/* ===================================
+   SCROLL TO TOP BUTTON
+   =================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+  transition: all var(--transition-base);
+  z-index: 999;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.6);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* ===================================
+   MEJORAS RESPONSIVE FINALES
+   =================================== */
+
+/* Ajustar espaciado en móviles */
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2rem;
+    --spacing-3xl: 2.5rem;
+  }
+  
+  main {
+    padding: var(--spacing-md);
+  }
+  
+  .section {
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .section h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-content {
+    gap: var(--spacing-2xl);
+  }
+  
+  .image-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 1.1rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+  
+  .navbar-logo .logo-text {
+    font-size: 1.25rem;
+  }
+}
+
+/* Reducir movimiento para usuarios con preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

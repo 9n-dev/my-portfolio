@@ -2,10 +2,11 @@ import NavBar from './components/NavBar'
 import Hero from './components/Hero'
 import Footer from './components/Footer'
 import About from './components/About'
-import SkillsImproved from './components/Skills'  // ← Cambio
+import SkillsImproved from './components/Skills'
 import Projects from './components/Projects'
 import ContactForm from './components/ContactForm'
-import { personalInfo, projects } from './data/portfolio'  // ← Quitamos skills
+import ScrollToTop from './components/ScrollToTop'
+import { personalInfo, projects } from './data/portfolio'
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <main>
         <About name={personalInfo.name} />
         
-        <SkillsImproved />  {/* ← Nuevo componente */}
+        <SkillsImproved />
         
         <Projects projects={projects} />
         
@@ -25,6 +26,8 @@ function App() {
       </main>
       
       <Footer />
+      
+      <ScrollToTop />  {/* ← Añadir al final */}
     </div>
   )
 }

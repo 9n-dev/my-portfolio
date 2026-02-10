@@ -1,10 +1,14 @@
 import { useLanguage } from '../contexts/LanguageContext'
+import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import Section from './Section'
 import TechIcon from './TechIcon'
 import { skillsByCategory } from '../data/portfolio'
 
 function SkillsImproved() {
   const { t, language } = useLanguage()
+  const frontendRef = useScrollAnimation()
+  const backendRef = useScrollAnimation()
+  const toolsRef = useScrollAnimation()
   
   const translateLevel = (level: string): string => {
     const levelMap: { [key: string]: string } = {
@@ -22,7 +26,7 @@ function SkillsImproved() {
     <Section title={t.skills.title} id="skills">
       <div className="skills-container">
         {/* Frontend */}
-        <div className="skill-category">
+        <div ref={frontendRef} className="skill-category animate-on-scroll">
           <h3 className="category-title">
             <span className="category-icon">🎨</span>
             {t.skills.categories.frontend}
@@ -39,7 +43,7 @@ function SkillsImproved() {
         </div>
         
         {/* Backend */}
-        <div className="skill-category">
+        <div ref={backendRef} className="skill-category animate-on-scroll">
           <h3 className="category-title">
             <span className="category-icon">⚙️</span>
             {t.skills.categories.backend}
@@ -56,7 +60,7 @@ function SkillsImproved() {
         </div>
         
         {/* Tools */}
-        <div className="skill-category">
+        <div ref={toolsRef} className="skill-category animate-on-scroll">
           <h3 className="category-title">
             <span className="category-icon">🛠️</span>
             {t.skills.categories.tools}
