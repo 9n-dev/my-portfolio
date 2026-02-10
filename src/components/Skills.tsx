@@ -1,25 +1,76 @@
 import { useLanguage } from '../contexts/LanguageContext'
 import Section from './Section'
-import { type Skill } from '../types'
+import { skillsByCategory } from '../data/portfolio'
 
-interface SkillsProps {
-  skills: Skill[];
-}
-
-function Skills({ skills }: SkillsProps) {
-  const { t } = useLanguage()
+function SkillsImproved() {
+  const { t, language } = useLanguage()
+  
+  // Función helper para traducir niveles
+  const translateLevel = (level: string): string => {
+    const levelMap: { [key: string]: string } = {
+      'Principiante': language === 'es' ? 'Principiante' : 'Beginner',
+      'Intermedio': language === 'es' ? 'Intermedio' : 'Intermediate',
+      'Avanzado': language === 'es' ? 'Avanzado' : 'Advanced',
+      'Experto': language === 'es' ? 'Experto' : 'Expert',
+      'Aprendiendo': language === 'es' ? 'Aprendiendo' : 'Learning',
+      'Básico': language === 'es' ? 'Básico' : 'Basic'
+    }
+    return levelMap[level] || level
+  }
   
   return (
     <Section title={t.skills.title} id="skills">
-      <ul className="skills-list">
-        {skills.map((skill) => (
-          <li key={skill.name}>
-            <strong>{skill.name}</strong>: {skill.level}
-          </li>
-        ))}
-      </ul>
+      <div className="skills-container">
+        {/* Frontend */}
+        <div className="skill-category">
+          <h3 className="category-title">
+            <span className="category-icon">🎨</span>
+            {t.skills.categories.frontend}
+          </h3>
+          <div className="skills-grid">
+            {skillsByCategory.frontend.map((skill) => (
+              <div key={skill.name} className="skill-card">
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-level">{translateLevel(skill.level)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Backend */}
+        <div className="skill-category">
+          <h3 className="category-title">
+            <span className="category-icon">⚙️</span>
+            {t.skills.categories.backend}
+          </h3>
+          <div className="skills-grid">
+            {skillsByCategory.backend.map((skill) => (
+              <div key={skill.name} className="skill-card">
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-level">{translateLevel(skill.level)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Tools */}
+        <div className="skill-category">
+          <h3 className="category-title">
+            <span className="category-icon">🛠️</span>
+            {t.skills.categories.tools}
+          </h3>
+          <div className="skills-grid">
+            {skillsByCategory.tools.map((skill) => (
+              <div key={skill.name} className="skill-card">
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-level">{translateLevel(skill.level)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </Section>
   )
 }
 
-export default Skills
+export default SkillsImproved

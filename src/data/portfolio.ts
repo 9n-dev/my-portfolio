@@ -7,7 +7,33 @@ export const personalInfo: PersonalInfo = {
   description: 'Soy un desarrollador apasionado por crear aplicaciones web modernas y eficientes. Me especializo en React, TypeScript y Node.js.'
 }
 
-// Habilidades técnicas
+// Métricas de experiencia (NUEVO)
+export const stats = [
+  { id: 1, value: '2+', labelEs: 'Años de experiencia', labelEn: 'Years of experience' },
+  { id: 2, value: '15+', labelEs: 'Proyectos completados', labelEn: 'Projects completed' },
+  { id: 3, value: '10+', labelEs: 'Tecnologías', labelEn: 'Technologies' }
+]
+
+// Habilidades técnicas REORGANIZADAS por categoría (ACTUALIZADO)
+export const skillsByCategory = {
+  frontend: [
+    { name: 'React', level: 'Aprendiendo' },
+    { name: 'TypeScript', level: 'Aprendiendo' },
+    { name: 'HTML/CSS', level: 'Avanzado' },
+    { name: 'JavaScript', level: 'Intermedio' }
+  ],
+  backend: [
+    { name: 'Node.js', level: 'Básico' },
+    { name: 'Express', level: 'Básico' }
+  ],
+  tools: [
+    { name: 'Git', level: 'Intermedio' },
+    { name: 'Vite', level: 'Intermedio' },
+    { name: 'VS Code', level: 'Avanzado' }
+  ]
+}
+
+// Mantenemos el array simple por compatibilidad
 export const skills: Skill[] = [
   { name: 'HTML/CSS', level: 'Avanzado' },
   { name: 'JavaScript', level: 'Intermedio' },
@@ -17,7 +43,7 @@ export const skills: Skill[] = [
   { name: 'Node.js', level: 'Básico' }
 ]
 
-// Proyectos
+// Proyectos (sin cambios)
 export const projects: Project[] = [
   {
     id: 1,

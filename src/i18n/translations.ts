@@ -14,18 +14,21 @@ export const translations = {
     },
     about: {
       title: 'Sobre mí',
-      description: 'Soy un desarrollador apasionado por crear aplicaciones web modernas y eficientes. Me especializo en React, TypeScript y Node.js.',
-      yearsExperience: 'Años de experiencia',
-      projectsCompleted: 'Proyectos completados',
-      happyClients: 'Clientes satisfechos'
+      description: 'Soy un desarrollador apasionado por crear aplicaciones web modernas y eficientes. Me especializo en React, TypeScript y Node.js.'
     },
     skills: {
       title: 'Habilidades',
+      categories: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        tools: 'Herramientas'
+      },
       level: {
         beginner: 'Principiante',
         intermediate: 'Intermedio',
         advanced: 'Avanzado',
-        expert: 'Experto'
+        expert: 'Experto',
+        learning: 'Aprendiendo'  // AÑADIR ESTE
       }
     },
     projects: {
@@ -62,18 +65,21 @@ export const translations = {
     },
     about: {
       title: 'About Me',
-      description: 'I am a developer passionate about creating modern and efficient web applications. I specialize in React, TypeScript, and Node.js.',
-      yearsExperience: 'Years of experience',
-      projectsCompleted: 'Projects completed',
-      happyClients: 'Happy clients'
+      description: 'I am a developer passionate about creating modern and efficient web applications. I specialize in React, TypeScript, and Node.js.'
     },
     skills: {
       title: 'Skills',
+      categories: {
+        frontend: 'Frontend',
+        backend: 'Backend',
+        tools: 'Tools'
+      },
       level: {
         beginner: 'Beginner',
         intermediate: 'Intermediate',
         advanced: 'Advanced',
-        expert: 'Expert'
+        expert: 'Expert',
+        learning: 'Learning'  // AÑADIR ESTE
       }
     },
     projects: {
