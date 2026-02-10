@@ -1,5 +1,5 @@
 import NavBar from './components/NavBar'
-import Header from './components/Header'
+import Hero from './components/Hero'      // ← Cambio: Hero en lugar de Header
 import Footer from './components/Footer'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -10,11 +10,9 @@ import { personalInfo, skills, projects } from './data/portfolio'
 function App() {
   return (
     <div className="container">
-      <NavBar />  {/* ← Nuevo NavBar */}
+      <NavBar />
       
-      {/* Eliminamos <LanguageSelector /> */}
-      
-      <Header />
+      <Hero />  {/* ← Hero reemplaza a Header */}
       
       <main>
         <About name={personalInfo.name} />
