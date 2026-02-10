@@ -1,8 +1,10 @@
 import { useState, type FormEvent, type ChangeEvent } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 import Section from './Section'
 import { type ContactFormData } from '../types'
 
 function ContactForm() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -33,15 +35,15 @@ function ContactForm() {
   }
   
   return (
-    <Section title="Contacto" id="contact">
+    <Section title={t.contact.title} id="contact">
       {submitted ? (
         <div className="success-message">
-          <p>¡Gracias por tu mensaje! Te responderé pronto.</p>
+          <p>{t.contact.successMessage}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
-            <label htmlFor="name">Nombre:</label>
+            <label htmlFor="name">{t.contact.name}:</label>
             <input
               type="text"
               id="name"
@@ -53,7 +55,7 @@ function ContactForm() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">{t.contact.email}:</label>
             <input
               type="email"
               id="email"
@@ -65,7 +67,7 @@ function ContactForm() {
           </div>
           
           <div className="form-group">
-            <label htmlFor="message">Mensaje:</label>
+            <label htmlFor="message">{t.contact.message}:</label>
             <textarea
               id="message"
               name="message"
@@ -77,7 +79,7 @@ function ContactForm() {
           </div>
           
           <button type="submit" className="submit-button">
-            Enviar mensaje
+            {t.contact.send}
           </button>
         </form>
       )}

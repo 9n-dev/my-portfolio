@@ -1,12 +1,12 @@
-interface FooterProps {
-  year: number;
-  name: string;
-}
+import { useLanguage } from '../contexts/LanguageContext'
+import { personalInfo, currentYear } from '../data/portfolio'
 
-function Footer({ year, name }: FooterProps) {
+function Footer() {
+  const { t } = useLanguage()
+  
   return (
     <footer>
-      <p>&copy; {year} {name}</p>
+      <p>&copy; {currentYear} {personalInfo.name}. {t.footer.rights}</p>
     </footer>
   )
 }

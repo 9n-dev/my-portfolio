@@ -1,3 +1,4 @@
+import { useLanguage } from '../contexts/LanguageContext'
 import Section from './Section'
 import { type Skill } from '../types'
 
@@ -6,8 +7,10 @@ interface SkillsProps {
 }
 
 function Skills({ skills }: SkillsProps) {
+  const { t } = useLanguage()
+  
   return (
-    <Section title="Habilidades" id="skills">
+    <Section title={t.skills.title} id="skills">
       <ul className="skills-list">
         {skills.map((skill) => (
           <li key={skill.name}>

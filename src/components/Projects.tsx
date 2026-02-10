@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLanguage } from '../contexts/LanguageContext'
 import Section from './Section'
 import { type Project } from '../types'
 
@@ -7,6 +8,7 @@ interface ProjectsProps {
 }
 
 function Projects({ projects }: ProjectsProps) {
+  const { t } = useLanguage()
   const [expandedId, setExpandedId] = useState<number | null>(null)
   
   const toggleProject = (id: number) => {
@@ -18,7 +20,7 @@ function Projects({ projects }: ProjectsProps) {
   }
   
   return (
-    <Section title="Proyectos" id="projects">
+    <Section title={t.projects.title} id="projects">
       <div className="projects-list">
         {projects.map((project) => (
           <div key={project.id} className="project-card">
@@ -26,12 +28,12 @@ function Projects({ projects }: ProjectsProps) {
             <p>{project.description}</p>
             
             <button onClick={() => toggleProject(project.id)}>
-              {expandedId === project.id ? 'Ocultar detalles' : 'Ver detalles'}
+              {expandedId === project.id ? t.projects.hideDetails : t.projects.viewDetails}
             </button>
             
             {expandedId === project.id && (
               <div className="project-details">
-                <h4>Tecnologías utilizadas:</h4>
+                <h4>{t.projects.technologies}:</h4>
                 <ul>
                   {project.technologies.map((tech) => (
                     <li key={tech}>{tech}</li>
@@ -39,7 +41,7 @@ function Projects({ projects }: ProjectsProps) {
                 </ul>
                 {project.link && (
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    Ver proyecto →
+                    {t.projects.viewProject} →
                   </a>
                 )}
               </div>
