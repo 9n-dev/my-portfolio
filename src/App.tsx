@@ -4,15 +4,15 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import ContactForm from './components/ContactForm'
+import LanguageSelector from './components/LanguageSelector'
 import { personalInfo, skills, projects, currentYear } from './data/portfolio'
 
 function App() {
   return (
     <div className="container">
-      <Header 
-        name={personalInfo.name} 
-        title={personalInfo.title} 
-      />
+      <LanguageSelector />
+      
+      <Header />  {/* ← Sin props */}
       
       <main>
         <About 

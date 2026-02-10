@@ -1,13 +1,15 @@
-interface HeaderProps {
-  name: string;
-  title: string;
-}
+import { useLanguage } from '../contexts/LanguageContext'
 
-function Header({ name, title }: HeaderProps) {
+function Header() {
+  const { t, language } = useLanguage()
+  
   return (
     <header>
-      <h1>{name}</h1>
-      <p>{title}</p>
+      <h1>{t.hero.greeting} Juan Pérez</h1>
+      <p>{t.hero.title}</p>
+      <p style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
+        {language === 'es' ? '🇪🇸' : '🇬🇧'} {language.toUpperCase()}
+      </p>
     </header>
   )
 }
