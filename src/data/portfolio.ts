@@ -50,20 +50,24 @@ export const projects: Project[] = [
     title: 'Portfolio Personal',
     description: 'Mi primer proyecto en React con TypeScript siguiendo las mejores prácticas de Full Stack Open',
     technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
-    link: 'https://github.com/tuusuario/portfolio'
+    link: 'https://mi-portfolio.vercel.app',  // URL del sitio desplegado
+    githubUrl: 'https://github.com/tuusuario/portfolio'  // ← AÑADIR
   },
   {
     id: 2,
     title: 'Aplicación de Tareas',
     description: 'Una app para gestionar tareas diarias con almacenamiento local',
     technologies: ['React', 'TypeScript', 'LocalStorage'],
+    githubUrl: 'https://github.com/tuusuario/todo-app'  // ← AÑADIR
+    // Sin link porque aún no está desplegado
   },
   {
     id: 3,
     title: 'Blog Personal',
     description: 'Un blog construido desde cero con diseño responsivo',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    link: 'https://miblog.com'
+    link: 'https://miblog.com',
+    githubUrl: 'https://github.com/tuusuario/blog'  // ← AÑADIR
   }
 ]
 

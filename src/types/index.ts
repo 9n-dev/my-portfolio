@@ -11,6 +11,7 @@ export interface Project {
   description: string;
   technologies: string[];
   link?: string;
+  githubUrl?: string;
 }
 
 // Tipos para el formulario de contacto

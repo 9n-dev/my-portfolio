@@ -998,3 +998,145 @@ html {
     padding: var(--spacing-lg);
   }
 }
+
+/* ===================================
+   TECH ICONS
+   =================================== */
+.skill-icon {
+  display: block;
+  margin: 0 auto var(--spacing-md);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform var(--transition-base);
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1);
+}
+
+/* ===================================
+   PROJECT ACTIONS Y BOTONES
+   =================================== */
+.project-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.project-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* Botón secundario (Ver detalles) */
+.btn-secondary {
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-bg-tertiary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+
+.btn-secondary:hover {
+  background-color: transparent;
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+/* Botones con ícono */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: 2px solid var(--color-bg-tertiary);
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.btn-icon:hover {
+  background-color: transparent;
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-icon img {
+  flex-shrink: 0;
+}
+
+/* Botón primario (destacado) */
+.btn-icon.btn-primary {
+  background-color: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: white;
+}
+
+.btn-icon.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: white;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+/* Lista de tecnologías con íconos */
+.tech-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  border: 1px solid var(--color-accent-primary);
+  color: var(--color-accent-light);
+}
+
+.tech-badge img {
+  flex-shrink: 0;
+}
+
+/* ===================================
+   RESPONSIVE PROJECTS
+   =================================== */
+@media (max-width: 768px) {
+  .project-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn-secondary {
+    width: 100%;
+  }
+  
+  .project-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .btn-icon {
+    flex: 1;
+    justify-content: center;
+  }
+}

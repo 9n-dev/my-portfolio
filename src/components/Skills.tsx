@@ -1,11 +1,11 @@
 import { useLanguage } from '../contexts/LanguageContext'
 import Section from './Section'
+import TechIcon from './TechIcon'
 import { skillsByCategory } from '../data/portfolio'
 
 function SkillsImproved() {
   const { t, language } = useLanguage()
   
-  // Función helper para traducir niveles
   const translateLevel = (level: string): string => {
     const levelMap: { [key: string]: string } = {
       'Principiante': language === 'es' ? 'Principiante' : 'Beginner',
@@ -30,6 +30,7 @@ function SkillsImproved() {
           <div className="skills-grid">
             {skillsByCategory.frontend.map((skill) => (
               <div key={skill.name} className="skill-card">
+                <TechIcon name={skill.name} size={40} className="skill-icon" />
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-level">{translateLevel(skill.level)}</div>
               </div>
@@ -46,6 +47,7 @@ function SkillsImproved() {
           <div className="skills-grid">
             {skillsByCategory.backend.map((skill) => (
               <div key={skill.name} className="skill-card">
+                <TechIcon name={skill.name} size={40} className="skill-icon" />
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-level">{translateLevel(skill.level)}</div>
               </div>
@@ -62,6 +64,7 @@ function SkillsImproved() {
           <div className="skills-grid">
             {skillsByCategory.tools.map((skill) => (
               <div key={skill.name} className="skill-card">
+                <TechIcon name={skill.name} size={40} className="skill-icon" />
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-level">{translateLevel(skill.level)}</div>
               </div>
