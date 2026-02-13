@@ -8,6 +8,8 @@ function SkillsImproved() {
   const { t, language } = useLanguage()
   const frontendRef = useScrollAnimation()
   const backendRef = useScrollAnimation()
+  const databaseRef = useScrollAnimation()
+  const devopsRef = useScrollAnimation()
   const toolsRef = useScrollAnimation()
   
   const translateLevel = (level: string): string => {
@@ -34,7 +36,12 @@ function SkillsImproved() {
           <div className="skills-grid">
             {skillsByCategory.frontend.map((skill) => (
               <div key={skill.name} className="skill-card">
-                <TechIcon name={skill.name} size={40} className="skill-icon" />
+                <TechIcon 
+                  name={skill.name} 
+                  size={40} 
+                  className="skill-icon"
+                  customImage={skill.image}
+                />
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-level">{translateLevel(skill.level)}</div>
               </div>
@@ -51,7 +58,56 @@ function SkillsImproved() {
           <div className="skills-grid">
             {skillsByCategory.backend.map((skill) => (
               <div key={skill.name} className="skill-card">
-                <TechIcon name={skill.name} size={40} className="skill-icon" />
+                <TechIcon 
+                  name={skill.name} 
+                  size={40} 
+                  className="skill-icon"
+                  customImage={skill.image}
+                />
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-level">{translateLevel(skill.level)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Database & Cloud */}
+        <div ref={databaseRef} className="skill-category animate-on-scroll">
+          <h3 className="category-title">
+            <span className="category-icon">💾</span>
+            {t.skills.categories.database}
+          </h3>
+          <div className="skills-grid">
+            {skillsByCategory.database.map((skill) => (
+              <div key={skill.name} className="skill-card">
+                <TechIcon 
+                  name={skill.name} 
+                  size={40} 
+                  className="skill-icon"
+                  customImage={skill.image}
+                />
+                <div className="skill-name">{skill.name}</div>
+                <div className="skill-level">{translateLevel(skill.level)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* DevOps */}
+        <div ref={devopsRef} className="skill-category animate-on-scroll">
+          <h3 className="category-title">
+            <span className="category-icon">🚀</span>
+            {t.skills.categories.devops}
+          </h3>
+          <div className="skills-grid">
+            {skillsByCategory.devops.map((skill) => (
+              <div key={skill.name} className="skill-card">
+               <TechIcon 
+                  name={skill.name} 
+                  size={40} 
+                  className="skill-icon"
+                  customImage={skill.image}  // ← Esta línea debe estar
+                />
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-level">{translateLevel(skill.level)}</div>
               </div>
@@ -68,7 +124,12 @@ function SkillsImproved() {
           <div className="skills-grid">
             {skillsByCategory.tools.map((skill) => (
               <div key={skill.name} className="skill-card">
-                <TechIcon name={skill.name} size={40} className="skill-icon" />
+                <TechIcon 
+                  name={skill.name} 
+                  size={40} 
+                  className="skill-icon"
+                  customImage={skill.image}
+                />
                 <div className="skill-name">{skill.name}</div>
                 <div className="skill-level">{translateLevel(skill.level)}</div>
               </div>

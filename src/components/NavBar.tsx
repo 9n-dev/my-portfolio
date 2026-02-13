@@ -14,7 +14,7 @@ function NavBar() {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <span className="logo-text">JP</span>
+          <span className="logo-text">M</span>
         </div>
         
         <ul className="navbar-links">

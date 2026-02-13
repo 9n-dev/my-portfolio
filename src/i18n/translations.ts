@@ -8,19 +8,21 @@ export const translations = {
     },
     hero: {
       greeting: 'Hola, soy',
-      title: 'Desarrollador Web Full Stack',
-      description: 'Construyo experiencias web modernas con React y TypeScript',
+      title: 'Desarrollador Full Stack',
+      description: 'Construyo software limpio, eficaz y escalable',
       cta: 'Ver proyectos'
     },
     about: {
       title: 'Sobre mí',
-      description: 'Soy un desarrollador apasionado por crear aplicaciones web modernas y eficientes. Me especializo en React, TypeScript y Node.js.'
+      description: 'Soy un apasionado de la tecnología que disfruta aprendiendo constantemente y manteniéndose al día con las últimas tendencias e innovaciones del sector. Me motiva crear soluciones elegantes y eficientes que resuelvan problemas reales.'
     },
     skills: {
       title: 'Habilidades',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend',
+        database: 'Base de Datos & Cloud',
+        devops: 'DevOps',
         tools: 'Herramientas'
       },
       level: {
@@ -28,7 +30,8 @@ export const translations = {
         intermediate: 'Intermedio',
         advanced: 'Avanzado',
         expert: 'Experto',
-        learning: 'Aprendiendo'  // AÑADIR ESTE
+        learning: 'Aprendiendo',
+        basic: 'Básico'
       }
     },
     projects: {
@@ -59,19 +62,21 @@ export const translations = {
     },
     hero: {
       greeting: 'Hi, I am',
-      title: 'Full Stack Web Developer',
-      description: 'I build modern web experiences with React and TypeScript',
+      title: 'Full Stack Developer',
+      description: 'I build clean, efficient, and scalable software',
       cta: 'View projects'
     },
     about: {
       title: 'About Me',
-      description: 'I am a developer passionate about creating modern and efficient web applications. I specialize in React, TypeScript, and Node.js.'
+      description: 'I am a technology enthusiast who enjoys constantly learning and staying up to date with the latest trends and innovations in the field. I am driven by creating elegant and efficient solutions that solve real-world problems.'
     },
     skills: {
       title: 'Skills',
       categories: {
         frontend: 'Frontend',
         backend: 'Backend',
+        database: 'Database & Cloud',
+        devops: 'DevOps',
         tools: 'Tools'
       },
       level: {
@@ -79,7 +84,8 @@ export const translations = {
         intermediate: 'Intermediate',
         advanced: 'Advanced',
         expert: 'Expert',
-        learning: 'Learning'  // AÑADIR ESTE
+        learning: 'Learning',
+        basic: 'Basic'
       }
     },
     projects: {

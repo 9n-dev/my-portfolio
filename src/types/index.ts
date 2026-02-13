@@ -2,6 +2,7 @@
 export interface Skill {
   name: string;
   level: string;
+  image?: string;
 }
 
 // Tipos para la sección de proyectos
